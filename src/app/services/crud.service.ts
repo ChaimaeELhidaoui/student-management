@@ -42,7 +42,7 @@ export class CrudService {
   }
   // Delete
   deleteBooking(id: string) {
-    this.bookingRef = this.db.object('/appointment/' + id);
+    this.bookingRef = this.db.object('/student/' + id);
     this.bookingRef.remove();
   }
 }

@@ -17,7 +17,7 @@ user={name:'',phone:'',email:'',password:''};
   this.auth.inscription(this.user.email,this.user.password)
    .then(userCredential => {
       console.log('Utilisateur créé avec succès :', userCredential);
-      this.router.navigate(['/login']);
+      this.router.navigate(['/homes']);
     })
     .catch(error => {
       console.log('Erreur lors de la création de l\'utilisateur :', error);

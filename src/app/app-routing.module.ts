@@ -29,7 +29,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/student-form/student-form.module').then( m => m.StudentFormPageModule)
   },
   {
-    path: 'student-edit',
+    path: 'student-edit/:id',
     loadChildren: () => import('./pages/student-edit/student-edit.module').then( m => m.StudentEditPageModule)
   },
   {

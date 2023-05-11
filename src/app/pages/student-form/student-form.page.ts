@@ -24,13 +24,14 @@ export class StudentFormPage implements OnInit {
   }
   formSubmit() {
     if (!this.bookingForm.valid) {
+      console.log("rien n est insere");
       return false;
     } else {
       
       return this.aptService.createBooking(this.bookingForm.value).then(res => {
         console.log(res)
         this.bookingForm.reset();
-        this.router.navigate(['/home']);
+        this.router.navigate(['/homes']);
       })
         .catch(error => console.log(error));
     

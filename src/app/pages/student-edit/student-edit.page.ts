@@ -34,7 +34,7 @@ export class StudentEditPage implements OnInit {
   updateForm() {
     this.aptService.updateBooking(this.id, this.updateBookingForm.value)
       .then(() => {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/homes']);
       })
       .catch(error => console.log(error));
   }
