@@ -1,0 +1,48 @@
+
+
+<ion-app>
+  <ion-router-outlet></ion-router-outlet>
+</ion-app>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Student Management
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list class="ios list-ios hydrated">
+    <ion-list-header class="ios hydrated">
+      Student List
+    </ion-list-header>
+    <ion-item *ngFor="let booking of Bookings" class="user-list">
+      <ion-label>
+        <h5>
+          <ion-icon name="person"></ion-icon> {{booking.name}}
+        </h5>
+        <p>
+          <ion-icon name="call"></ion-icon> {{booking.mobile}}
+        </p>
+      </ion-label>
+      <div class="item-note" item-end>
+        <button ion-button clear [routerLink]="['/student-edit/', booking.$key]">
+          <ion-icon name="create" style="zoom:2.0"></ion-icon>
+        </button>
+        <button ion-button clear (click)="deleteBooking(booking.$key)">
+          <ion-icon name="trash" style="zoom:2.0"></ion-icon>
+        </button>
+      </div>
+    </ion-item>
+  </ion-list>
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button routerLinkActive="tab-selected" routerLink="/homes" class="ios" tab="home">
+      <ion-icon name="list-box"></ion-icon>
+      <ion-label>Students</ion-label>
+    </ion-tab-button>
+    <ion-tab-button routerLinkActive="tab-selected" routerLink="/student-form" class="ios" tab="make-appointment">
+      <ion-icon name="add-circle"></ion-icon>
+      <ion-label>student</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

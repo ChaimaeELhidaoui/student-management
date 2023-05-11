@@ -25,9 +25,20 @@ const routes: Routes = [
     loadChildren: () => import('./pages/inscription/inscription.module').then( m => m.InscriptionPageModule)
   },
   {
-    path: 'mainpage',
-    loadChildren: () => import('./pages/mainpage/mainpage.module').then( m => m.MainpagePageModule)
+    path: 'student-form',
+    loadChildren: () => import('./pages/student-form/student-form.module').then( m => m.StudentFormPageModule)
   },
+  {
+    path: 'student-edit',
+    loadChildren: () => import('./pages/student-edit/student-edit.module').then( m => m.StudentEditPageModule)
+  },
+  {
+    path: 'homes',
+    loadChildren: () => import('./pages/homeS/home.module').then( m => m.HomePageModule)
+  },
+
+
+ 
 ];
 
 @NgModule({
